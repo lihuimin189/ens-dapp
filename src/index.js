@@ -1,4 +1,5 @@
  
+ 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -24,7 +25,7 @@ const schema = makeExecutableSchema({
   typeDefs,
   resolvers
 })
-// const schemaWithMocks = addMocksToSchema({ schema })
+//、 const schemaWithMocks = addMocksToSchema({ schema })
 
 const cache = new InMemoryCache(window.__APOLLO_STATE__)
 
