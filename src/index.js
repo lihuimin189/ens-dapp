@@ -6,33 +6,33 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import {
-  ApolloClient,
-  InMemoryCache,
+  // ApolloClient,
+  // InMemoryCache,
   ApolloProvider
 } from "@apollo/client";
 
+import graphqlClient from './api/client'
+// import resolvers, { defaults } from './api/resolvers/rootResolver'
+// import typeDefs from './api/schema'
 
-import resolvers, { defaults } from './api/resolvers/rootResolver'
-import typeDefs from './api/schema'
 
 
+// import { SchemaLink } from '@apollo/client/link/schema'
+// import { makeExecutableSchema } from '@graphql-tools/schema'
+// import { addMocksToSchema } from '@graphql-tools/mock'
+// const schema = makeExecutableSchema({
+//   typeDefs,
+//   resolvers
+// })
+// // const schemaWithMocks = addMocksToSchema({ schema })
 
-import { SchemaLink } from '@apollo/client/link/schema'
-import { makeExecutableSchema } from '@graphql-tools/schema'
-import { addMocksToSchema } from '@graphql-tools/mock'
-const schema = makeExecutableSchema({
-  typeDefs,
-  resolvers
-})
-// const schemaWithMocks = addMocksToSchema({ schema })
+// const cache = new InMemoryCache(window.__APOLLO_STATE__)
 
-const cache = new InMemoryCache(window.__APOLLO_STATE__)
+// const graphqlClient = new ApolloClient({
+//   cache,
+//   link: new SchemaLink({ schema })//这里我们只专注前端，模拟后台数据
 
-const graphqlClient = new ApolloClient({
-  cache,
-  link: new SchemaLink({ schema })//这里我们只专注前端，模拟后台数据
-
-})
+// })
 
 ReactDOM.render(
   <ApolloProvider client={graphqlClient}>

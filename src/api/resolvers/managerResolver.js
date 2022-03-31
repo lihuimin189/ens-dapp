@@ -1,8 +1,7 @@
  
 // import { watchRegistryEvent } from '../watchers'
 import { getOwner, getRootDomain } from '../registry'
-import { gql
-} from "@apollo/client";
+import { gql } from "@apollo/client";
 
 const defaults = {
   nodes: []
@@ -11,9 +10,9 @@ const defaults = {
 const resolvers = {
   Mutation: {
     addNode: async (_, { name }, { cache }) => {
+      debugger;
       const owner = await getOwner(name)
-
-      //Return null if no owner
+      // //Return null if no owner
       if (parseInt(owner, 16) === 0) {
         return null
       }
@@ -32,7 +31,6 @@ const resolvers = {
           }
         }
       `
-
       const { nodes } = cache.readQuery({ query })
 
       //Create Node

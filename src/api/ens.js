@@ -1,6 +1,10 @@
  
 import getWeb3 from './web3'
-import ENSconstructor, { getEnsAddress } from '@ensdomains/ensjs'
+ 
+import ENS, { getEnsAddress } from '@ensdomains/ensjs'
+
+
+
 
 var contracts = {
   1: {
@@ -11,7 +15,7 @@ var contracts = {
   }
 }
 
-let ENS
+let ens;
  
 
 function getNamehash(name) {
@@ -35,12 +39,13 @@ const getENS = async () => {
 
   debugger
 
-  if (!ENS) {
+  if (!ens) {
     // const ens = new ENS({ provider, ensAddress: getEnsAddress('1') })
-    ENS = new ENSconstructor({ provider, ensAddress: getEnsAddress(networkId) })
+     
+    ens = new ENS({ provider, ensAddress: getEnsAddress('1') })
   }
 
-  return { ENS, web3 }  
+  return { ens, web3 }  
 }
  
 

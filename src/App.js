@@ -5,6 +5,9 @@ import './App.css';
 import { BrowserRouter ,Routes, Route, Link } from 'react-router-dom'
 import Home from './routes/Home'
 import Manager from './routes/Manager'
+
+
+
 const App = ()=>(
   <BrowserRouter>
     <div>

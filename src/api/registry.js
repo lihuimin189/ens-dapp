@@ -51,11 +51,20 @@ export function getRootDomain(name) {
   
 export async function getOwner(name) {
     debugger
-    let { ENS, web3 } = await getENS();
+    let { ens, web3 } = await getENS();
     // var address = await ens.name('resolver.eth').getAddress();
 
     // var address = await ENS.name(name).getAddress() ;
-    return ENS.name('resolver.eth').getOwner() 
+    // ENS.name(name).getOwner().then(re=>{
+    //   console.log(re)
+    //   debugger
+    // }).catch(er=>{
+    //   console.log(er);
+    //   debugger
+    // })
+    // let { ENS, web3 } = await getENS()
+    // return ENS.owner(name)
+    return ens.name(name).getOwner()
   
 }
   
